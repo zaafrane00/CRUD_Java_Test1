@@ -65,7 +65,9 @@ public class ManageUser  {
             
             
             ManageUser mg=new ManageUser();
-            mg.getUserbyName("mohamed");
+            User p=new User(5,"hamza2","adress552");
+            //mg.getUserbyName("mohamed");
+            mg.store(p);
         } catch (SQLException ex) {
             Logger.getLogger(ManageUser.class.getName()).log(Level.SEVERE, null, ex);
         }
