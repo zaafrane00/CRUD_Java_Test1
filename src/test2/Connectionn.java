@@ -26,7 +26,6 @@ public class Connectionn {
     String [][] chercher(String colonnes[], String cond, String table) throws SQLException {
         stm=myConnection.createStatement();
         String response[][];
-        
         String req="";
         for(int i=0; i<colonnes.length; i++) {
             if(i==colonnes.length-1)
@@ -54,7 +53,8 @@ public class Connectionn {
     void addUser( User personne, String table) throws SQLException {
         stm=myConnection.createStatement();
         String req="";
-        req="insert into "+table+"(id,nom,adress) values("+personne.id+","+personne.nom+","+personne.adress+")";
+        req="insert into "+table+"(id,nom,adress)values('"+personne.id+"','"+personne.nom+"','"+personne.adress+"')";
+        System.out.println(req);
         stm.executeUpdate(req);
     }
     
